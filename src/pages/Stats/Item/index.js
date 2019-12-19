@@ -60,7 +60,7 @@ const Item = props => {
             {ipad_position_info.position}{" "}
             {ipad_position_info.change !== 0 && (
               <ColoredElement count={ipad_position_info.change}>
-                ({ipad_position_info.change})
+                {ipad_position_info.change}
               </ColoredElement>
             )}
           </>
