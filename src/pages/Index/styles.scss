@@ -1,0 +1,13 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .text {
+    display: inline-block;
+    font-size: 20px;
+    line-height: 28px;
+    margin-right: 8px;
+  }
+}

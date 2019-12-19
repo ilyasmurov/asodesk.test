@@ -5,9 +5,15 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case "popup/open":
-      return Object.assign({}, state, { isOpen: true });
+      return {
+        ...state,
+        isOpen: true
+      };
     case "popup/close":
-      return Object.assign({}, state, { isOpen: false });
+      return {
+        ...state,
+        isOpen: false
+      };
 
     default:
       return state;

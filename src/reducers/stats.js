@@ -49,7 +49,6 @@ export const set = value => {
 };
 
 export const get = () => {
-  console.log("process: ", process);
   return dispatch => {
     dispatch({
       type: "stats/load"

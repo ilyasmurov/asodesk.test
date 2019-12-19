@@ -12,9 +12,6 @@ export const sortTableNumbers = (data, order, field) => {
     const aField = Array.isArray(field) ? a[field[0]][field[1]] : a[field];
     const bField = Array.isArray(field) ? b[field[0]][field[1]] : b[field];
 
-    console.log(typeof aField, typeof bField);
-
-    // if (typeof aField !== "number" || typeof bField !== "number") return 0;
     return aField >= bField ? 1 * sort : -1 * sort;
   });
   return {

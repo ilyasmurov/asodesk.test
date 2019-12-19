@@ -1,17 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Button } from "../../components/_UI";
+
+import styles from "./styles.scss";
 
 const Index = () => (
-  <div
-    style={{
-      minHeight: "100vh",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      fontSize: "28px"
-    }}
-  >
-    <Link to={"/stats"}>Stats</Link>
+  <div className={styles.container}>
+    <span className={styles.text}>Welcome to</span>
+    <Button size="large" primary="true" to={"/stats"} title="Stats" />
   </div>
 );
 

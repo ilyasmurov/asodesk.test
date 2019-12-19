@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import buttonStyles from "../../styles/button.scss";
 
 export const Button = props => {
-  const { primary, title, to } = props;
+  const { primary, size, title, to } = props;
 
   return (
     <>
@@ -14,7 +14,8 @@ export const Button = props => {
           to={to}
           className={[
             buttonStyles.button,
-            primary ? buttonStyles.primary : null
+            primary ? buttonStyles.primary : null,
+            size === "large" ? buttonStyles.large : null
           ].join(" ")}
         >
           {title}
@@ -24,7 +25,8 @@ export const Button = props => {
           {...props}
           className={[
             buttonStyles.button,
-            primary ? buttonStyles.primary : null
+            primary ? buttonStyles.primary : null,
+            size === "large" ? buttonStyles.large : null
           ].join(" ")}
         >
           {title}

@@ -20,6 +20,12 @@
     background-color: #cccccc;
   }
 
+  &.large {
+    font-size: 20px;
+    height: 28px;
+    line-height: 28px;
+  }
+
   &.primary {
     color: #fff;
     background-color: #2AAA77;
