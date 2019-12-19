@@ -96,9 +96,19 @@ class Stats extends React.Component {
     this.props.statsSet(result.data);
   };
 
+  checkboxValue = () => {
+    const { checkList } = this.state;
+    for (let i = 0, max = this.props.stats.data.length; i < max; i++) {
+      const item = this.props.stats.data[i];
+      if (checkList.indexOf(item.id) < 0) return false;
+    }
+    return true;
+  };
+
   render() {
     const { stats } = this.props;
     const { checkList, orderField } = this.state;
+
     return (
       <Layout>
         <h1>Stats</h1>
@@ -109,6 +119,7 @@ class Stats extends React.Component {
                 <th>
                   <input
                     type="checkbox"
+                    checked={this.checkboxValue()}
                     onChange={e => this.onCheckedAll(e.target.checked)}
                   />
                 </th>
