@@ -6,9 +6,10 @@ import { Button } from "../../../components/_UI";
 import ColoredElement from "../../../components/ColoredElement";
 
 import styles from "./styles.scss";
+import animate from "../../../styles/animate.scss";
 
 const Item = props => {
-  const { data, value } = props;
+  const { data, value, index } = props;
   const {
     id,
     keyword,
@@ -31,7 +32,10 @@ const Item = props => {
   };
 
   return (
-    <tr>
+    <tr
+      className={animate.fromBottom}
+      style={{ animationDelay: `${index * 0.03}s` }}
+    >
       <td>
         <input
           onChange={e => onChecked(e.target.checked)}

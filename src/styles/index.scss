@@ -32,6 +32,8 @@ table {
         font-weight: normal;
         text-align: left;
 
+        transition: background-color .1s ease-in-out;
+
         &:after {
           content: '';
           height: 4px;

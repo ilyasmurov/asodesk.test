@@ -9,6 +9,7 @@ import { get as statsGet, set as statsSet } from "../../reducers/stats";
 import { sortTableNumbers, sortTableStrings } from "../../lib/sort";
 
 import styles from "./styles.scss";
+import animate from "../../styles/animate.scss";
 
 class Stats extends React.Component {
   constructor(props) {
@@ -111,12 +112,12 @@ class Stats extends React.Component {
 
     return (
       <Layout>
-        <h1>Stats</h1>
+        <h1 className={animate.fade}>Stats</h1>
         {stats.load && stats.done ? (
           <table cellSpacing="0" cellPadding="0" width="100%">
             <thead>
               <tr>
-                <th>
+                <th className={animate.fade}>
                   <input
                     type="checkbox"
                     checked={this.checkboxValue()}
@@ -124,7 +125,8 @@ class Stats extends React.Component {
                   />
                 </th>
                 <th
-                  className={styles.sort}
+                  className={[styles.sort, animate.fade].join(" ")}
+                  style={{ animationDelay: ".1s" }}
                   onClick={() =>
                     this.sortTableString(this.state.order, "keyword")
                   }
@@ -139,10 +141,17 @@ class Stats extends React.Component {
                     </>
                   )}
                 </th>
-                <th></th>
-                <th></th>
                 <th
-                  className={styles.sort}
+                  className={animate.fade}
+                  style={{ animationDelay: ".11s" }}
+                ></th>
+                <th
+                  className={animate.fade}
+                  style={{ animationDelay: ".12s" }}
+                ></th>
+                <th
+                  className={[styles.sort, animate.fade].join(" ")}
+                  style={{ animationDelay: ".13s" }}
                   onClick={() =>
                     this.sortTable(this.state.order, "suggestions_count")
                   }
@@ -158,7 +167,8 @@ class Stats extends React.Component {
                   )}
                 </th>
                 <th
-                  className={styles.sort}
+                  className={[styles.sort, animate.fade].join(" ")}
+                  style={{ animationDelay: ".14s" }}
                   onClick={() =>
                     this.sortTable(
                       this.state.order,
@@ -177,7 +187,8 @@ class Stats extends React.Component {
                   )}
                 </th>
                 <th
-                  className={styles.sort}
+                  className={[styles.sort, animate.fade].join(" ")}
+                  style={{ animationDelay: ".15s" }}
                   onClick={() =>
                     this.sortTable(this.state.order, "ipad_total_apps")
                   }
@@ -192,16 +203,22 @@ class Stats extends React.Component {
                     </>
                   )}
                 </th>
-                <th>Color</th>
-                <th></th>
+                <th className={animate.fade} style={{ animationDelay: ".16s" }}>
+                  Color
+                </th>
+                <th
+                  className={animate.fade}
+                  style={{ animationDelay: ".17s" }}
+                ></th>
               </tr>
             </thead>
             <tbody>
               {stats.data &&
                 (stats.data.length > 0 ? (
-                  stats.data.map(item => {
+                  stats.data.map((item, index) => {
                     return (
                       <Item
+                        index={index}
                         onChecked={(id, checked) => this.onChecked(id, checked)}
                         onRemove={id => this.onRemove(id)}
                         value={checkList[checkList.indexOf(item.id)] || false}
