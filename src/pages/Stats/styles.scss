@@ -1,0 +1,13 @@
+.sort {
+  cursor: pointer;
+  padding-right: 10px;
+
+  &:hover {
+    background-color: #eee;
+  }
+
+  span {
+    display: inline-block;
+    padding: 0 4px;
+  }
+}

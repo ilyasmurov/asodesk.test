@@ -1,0 +1,36 @@
+.button {
+  display: inline-block;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 10px;
+  text-decoration: none;
+  background-color: #cccccc;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #222;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    background-color: #ddd;
+  }
+
+  &:active {
+    background-color: #cccccc;
+  }
+
+  &.primary {
+    color: #fff;
+    background-color: #2AAA77;
+    border: 1px solid #2AAA77;
+
+    &:hover {
+      background-color: #3bc58e;
+    }
+
+    &:active {
+      background-color: #2AAA77;
+    }
+  }
+}

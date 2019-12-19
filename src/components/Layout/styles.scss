@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+
+  .layout {
+    max-width: 860px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px;
+    box-sizing: border-box;
+  }
+}
